@@ -50,20 +50,6 @@ const ChatRoom = () => {
   const {
     sendMessage,
     users,
-    callUser,
-    answerCall,
-    leaveCall,
-    callAccepted,
-    callEnded,
-    idToCall,
-    setIdToCall,
-    receivingCall,
-    myVideo,
-    userVideo,
-    stream,
-    name,
-    setName,
-    me,
   } = useChat(roomId);
   // Controlling the form
   const [message, setMessage] = useState('');
@@ -148,83 +134,6 @@ const ChatRoom = () => {
               Send
             </button>
           </form>
-        </div>
-      </div>
-      <div className="col-span-5">
-        <div className="video-container">
-          {/* User's own video */}
-          <div className="video">
-            {stream && <video playsInline muted ref={myVideo} autoPlay style={{ width: '300px' }} />}
-          </div>
-          {/* Another user's video */}
-          <div className="video">
-            {callAccepted && !callEnded
-            // eslint-disable-next-line jsx-a11y/media-has-caption
-              ? <video playsInline ref={userVideo} autoPlay style={{ width: '300px' }} />
-              : null}
-          </div>
-        </div>
-        <div className="myId">
-          Set your name here:
-          <br />
-          <input
-            type="text"
-            value={name}
-            onChange={({ target }) => setName(target.value)}
-          />
-          <br />
-          Copy your id:
-          {' '}
-          {me}
-          <br />
-          Who you want to call by id:
-          <br />
-          <input
-            type="text"
-            value={idToCall}
-            onChange={({ target }) => setIdToCall(target.value)}
-          />
-          <br />
-          {
-            callAccepted && !callEnded
-              ? (
-                <button
-                  type="button"
-                  onClick={leaveCall}
-                >
-                  End Call
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => callUser(idToCall)}
-                >
-                  Call
-                  {' '}
-                  {idToCall}
-                </button>
-              )
-          }
-        </div>
-        <div>
-          {
-            receivingCall && !callAccepted
-              ? (
-                <div>
-                  <h2>
-                    {name}
-                    {' '}
-                    is calling...
-                  </h2>
-                  <button
-                    type="button"
-                    onClick={answerCall}
-                  >
-                    Answer
-                  </button>
-                </div>
-              ) : null
-          }
         </div>
       </div>
     </div>
