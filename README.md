@@ -18,3 +18,6 @@ Also website is responsive and I made all styling with Tailwindcss.
 ## Videochat
 I tried making a videochat with webRTC and 'simple-peer', but was unsuccessful due to technical issues.
 The code i wrote is in 'videochat' branch.
+
+
+### Running on https://protected-spire-61732.herokuapp.com/new-channel
