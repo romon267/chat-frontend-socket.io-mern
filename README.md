@@ -20,4 +20,4 @@ I tried making a videochat with webRTC and 'simple-peer', but was unsuccessful d
 The code i wrote is in 'videochat' branch.
 
 
-### Running on https://protected-spire-61732.herokuapp.com/new-channel
+### Running on https://protected-spire-61732.herokuapp.com
